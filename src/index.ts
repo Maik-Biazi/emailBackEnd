@@ -1,4 +1,5 @@
-import express, { Request, Response } from 'express';
+import { Request, Response } from 'express';
+const express = require('express');
 
 import cors from 'cors';
 import nodemailer, { Transporter } from 'nodemailer';
@@ -39,7 +40,7 @@ app.post('/send-email', async (req: Request, res: Response) => {
     await transporter.sendMail({
       to: message.to,
       from: 'maikwilliam4553@gmail.com',
-      subject:message.subject ,
+      subject: message.subject,
       html: `
       <html>
         <body>
