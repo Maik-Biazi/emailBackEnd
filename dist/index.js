@@ -6,17 +6,6 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const express_1 = __importDefault(require("express"));
 const cors_1 = __importDefault(require("cors"));
 const nodemailer_1 = __importDefault(require("nodemailer"));
-// const oAuth2Client = new OAuth2Client(
-//   '17981836483-pvq5cq37qkegfhvrki6394obg43ib31b.apps.googleusercontent.com',
-//   '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'
-// );
-// const authorizeUrl = oAuth2Client.generateAuthUrl({
-//   access_type: 'offline',
-//   scope: 'https://www.googleapis.com/auth/gmail.send'
-// });
-// const code = 'código-de-autorização-aqui';
-// const {tokens} = await oAuth2Client.getToken(code);
-// const accessToken = tokens.access_token;
 const app = (0, express_1.default)();
 app.use((0, cors_1.default)());
 app.use(express_1.default.json());
@@ -26,7 +15,7 @@ const transporter = nodemailer_1.default.createTransport({
     secure: false,
     auth: {
         user: 'maikwilliam4553@gmail.com',
-        pass: 'pzdksmbdsldpkicb',
+        pass: 'asieakqskccdfitr'
     },
 });
 app.post('/send-email', async (req, res) => {
@@ -35,7 +24,7 @@ app.post('/send-email', async (req, res) => {
         await transporter.sendMail({
             to: message.to,
             from: 'maikwilliam4553@gmail.com',
-            subject: `${message.subject} Nome${message.name}`,
+            subject: message.subject,
             html: `
       <html>
         <body>

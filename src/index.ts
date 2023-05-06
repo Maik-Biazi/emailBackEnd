@@ -1,4 +1,5 @@
 import express, { Request, Response } from 'express';
+
 import cors from 'cors';
 import nodemailer, { Transporter } from 'nodemailer';
 
@@ -6,26 +7,11 @@ import nodemailer, { Transporter } from 'nodemailer';
 interface IMessage {
   to: string;
   subject: string;
-  body: string;
+  body?: string;
   name: string;
 
 
 }
-
-// const oAuth2Client = new OAuth2Client(
-//   '17981836483-pvq5cq37qkegfhvrki6394obg43ib31b.apps.googleusercontent.com',
-//   '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'
-// );
-
-// const authorizeUrl = oAuth2Client.generateAuthUrl({
-//   access_type: 'offline',
-//   scope: 'https://www.googleapis.com/auth/gmail.send'
-// });
-
-
-// const code = 'código-de-autorização-aqui';
-// const {tokens} = await oAuth2Client.getToken(code);
-// const accessToken = tokens.access_token;
 
 const app = express();
 app.use(cors());
@@ -38,7 +24,7 @@ const transporter: Transporter = nodemailer.createTransport({
   secure: false,
   auth: {
     user: 'maikwilliam4553@gmail.com',
-    pass: 'pzdksmbdsldpkicb',
+    pass: 'asieakqskccdfitr'
 
 
   },
